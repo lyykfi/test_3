@@ -37,11 +37,6 @@ services:
       timeout: 5s
       retries: 5
       start_period: 10s
-  frontend:
-    build:
-      context: ./frontend
-    ports:
-      - '8080:5173'
 
 secrets:
   db_secret:

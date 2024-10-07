@@ -1,14 +1,23 @@
-# syntax=docker/dockerfile:1
+FROM php:8.2-fpm-alpine
 
-FROM composer:lts as deps
-COPY . /app/
-RUN composer install --prefer-dist --no-dev --optimize-autoloader --no-interaction
+WORKDIR /var/www/app
 
+RUN set -ex \
+  && apk --no-cache add \
+    postgresql-dev
 
-FROM php:8.2-apache as final
-RUN docker-php-ext-install pdo pdo_pgsql
-RUN a2enmod rewrite
-RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
-COPY --from=deps app/vendor/ /var/www/html/vendor
-COPY ./src /var/www/html
-USER www-data
+RUN apk update && apk add \
+    curl \
+    libpng-dev \
+    libxml2-dev \
+    zip \
+    unzip
+
+RUN docker-php-ext-install pdo pdo_pgsql \
+    && apk --no-cache add nodejs npm
+
+COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
+
+USER root
+
+RUN chmod 777 -R /var/www/app
