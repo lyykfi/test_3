@@ -4,7 +4,7 @@ import UserInfo from './Components/UserInfo.vue'
 </script>
 
 <style lang="scss" scoped>
-.wrapper {
+.user-wrapper {
     display: flex;
     height: 100%;
     align-items: stretch;
@@ -22,7 +22,7 @@ import UserInfo from './Components/UserInfo.vue'
 </style>
 
 <template>
-    <div class="wrapper">
+    <div class="user-wrapper">
         <div class="sidebar">
             <Sidebar />
         </div>
