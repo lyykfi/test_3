@@ -1,15 +1,16 @@
 <script setup>
-import { ref } from 'vue'
-const greeting = ref('Hello World!')
 </script>
 
 <template>
-  <p class="greeting">{{ greeting }}</p>
+    <section id="sidebar">
+        <section>
+            <h2>Поиск сотрудников</h2>
+        </section>
+        <section>
+            <h2>Результаты</h2>
+        </section>
+    </section>
+    <section id="content">
+        Выберите сотрудника, чтобы посмотреть его профиль
+    </section>
 </template>
-
-<style>
-.greeting {
-  color: red;
-  font-weight: bold;
-}
-</style>
