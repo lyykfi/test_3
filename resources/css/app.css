@@ -1,0 +1,18 @@
+@import url(./reset.css);
+
+body {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+}
+
+:root {
+    --color-primary: #E31F24;
+}
+
+html, body {
+    height: 100%;
+}
+
+#app {
+    height: 100%;
+}
