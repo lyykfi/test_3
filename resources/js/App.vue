@@ -5,8 +5,7 @@ import Header from './Layout/Header.vue'
 <style lang="scss" scoped>
 #root {
     padding: 50px;
-    height: calc(100% - 100px);
-    align-items: stretch;
+    height: calc(100% - 150px);
     display: flex;
     flex-direction: column;
 
@@ -15,6 +14,7 @@ import Header from './Layout/Header.vue'
         box-shadow: 0px 0px 10px 0px #0000001A;
         border-left: 1px solid #DEDEDD;
         flex: 1;
+        background-color: #FDFDFD;
     }
 }
 </style>

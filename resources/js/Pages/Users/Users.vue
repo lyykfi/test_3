@@ -7,7 +7,6 @@ import UserInfo from './Components/UserInfo.vue'
 .user-wrapper {
     display: flex;
     height: 100%;
-    align-items: stretch;
     display: flex;
 
     .sidebar {

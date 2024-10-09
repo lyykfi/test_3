@@ -23,13 +23,15 @@ class EmployeeController extends Controller
                 if(is_numeric($value)) {
                     array_push($ids, intval($value));
                 } else {
-                    $preparedStr = trim('%' . $value . '%');
+                    if (mb_strlen($value) > 0) {
+                        $preparedStr = trim('%' . $value . '%');
 
-                    if ($key === 0) {
-                        $query->where('name', 'like', $preparedStr);
-                
-                    } else {
-                        $query->orWhere('name', 'like', $preparedStr);
+                        if ($key === 0) {
+                            $query->where('name', 'like', $preparedStr);
+                    
+                        } else {
+                            $query->orWhere('name', 'like', $preparedStr);
+                        }
                     }
                 }
             }
