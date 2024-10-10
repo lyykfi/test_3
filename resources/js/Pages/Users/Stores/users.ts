@@ -17,10 +17,17 @@ export const useUsersStore = defineStore('users', {
                 this.isDirty = false;
                 this.isLoading = true;
 
-                const data = await axios.post('/employee/search', { text: text.value });
+                try {
+                    const data = await axios.post('/employee/search', { text: text.value });
+
+                    this.users = data.data;
+                } catch(e) {
+                    console.log('ошибка серевера');
+                } finally {
+
+                    this.isLoading = false;
+                }
     
-                this.isLoading = false;
-                this.users = data.data;
             } else {
                 this.isDirty = true;
                 this.users = [];

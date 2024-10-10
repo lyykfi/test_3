@@ -16,7 +16,7 @@ class EmployeeController extends Controller
      *  schema="Request",
      *  title="Запрос поиска. Ведет поиск по полям id, name. Можно передавать множество значений через ,",
      * 	@OA\Property(
-     * 		property="search",
+     * 		property="text",
      * 		type="string"
      * 	),
      * )
