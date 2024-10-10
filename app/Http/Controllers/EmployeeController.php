@@ -26,9 +26,9 @@ class EmployeeController extends Controller
      *          required=true,
      *          @OA\JsonContent(oneOf={
      *                 @OA\Schema(ref="#/components/schemas/Request"),
-     *             },)
-     *      ),
-     *     @OA\Response(response="200", description="Поиск сотрудников")
+     *          })
+     * ),
+     * @OA\Response(response="200", description="Поиск сотрудников")
      * )
      */
     public function search(Request $request)
