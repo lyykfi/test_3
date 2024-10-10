@@ -1,0 +1,47 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API сотрудников",
+        "version": "0.1"
+    },
+    "paths": {
+        "/employee/search": {
+            "post": {
+                "summary": "Поиск сотрудников.",
+                "operationId": "6e59fb339ec003f759f07a8baa81602a",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "oneOf": [
+                                    {
+                                        "$ref": "#/components/schemas/Request"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Поиск сотрудников"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Request": {
+                "title": "Запрос поиска. Ведет поиск по полям id, name. Можно передавать множество значений через ,",
+                "properties": {
+                    "search": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    }
+}
